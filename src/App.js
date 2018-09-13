@@ -131,7 +131,10 @@ function CorrectTotal(props) {
   var style = {
     display: "inline-block",
     background: "grey",
-    color: "lightgreen"
+    color: "lightgreen",
+    margin: "5%",
+    fontSize: "2em",
+    fontWeight: "lighter"
   }
   return(
     <h3 style={style}>Correct: {props.correct} </h3>
@@ -142,7 +145,9 @@ function BlasphemyTotal(props) {
   var style = {
     display: "inline-block",
     background: "grey",
-    color: "lightgreen"
+    color: "lightgreen",
+    fontSize: "2em",
+    fontWeight: "lighter"
   }
   return(
     <h3 style={style}>Blasphemy: {props.blasphemy} </h3>
