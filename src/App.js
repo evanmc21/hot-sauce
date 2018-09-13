@@ -57,10 +57,10 @@ class App extends Component {
     }
     ]
     this.state = {current: 0, dataSet:dataSet, correct: 0, blasphemy: 0}
-    this.handleOnClick = this.handleOnClick.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   } //constuctor ends
 
-  handleOnClick = input => {
+  handleClick = input => {
     if (input ==
     this.state.dataSet[this.state.current].correct) {
       this.setState({correct: this.state.correct + 1})
@@ -80,8 +80,9 @@ class App extends Component {
   render(){
     return(
       <div>
-        <Results correct={this.state.correct} blasphemy={this.state.blasphemy} />
-        <Quiz handleOnClick={this.handleOnClick} dataSet={this.state.dataSet[this.state.current]} />
+        <Results correct={this.state.correct}
+        blasphemy={this.state.blasphemy} />
+        <Quiz handleClick={this.handleClick} dataSet={this.state.dataSet[this.state.current]} />
       </div>
     )
   };
@@ -96,7 +97,7 @@ function Answer(props) {
   return(
     <div>
       <button style={style} onClick={() =>
-      props.handleOnClick(props.input)}>{props.answer} </button>
+      props.handleClick(props.input)}>{props.answer} </button>
     </div>
   )
 }
@@ -104,7 +105,9 @@ function Answer(props) {
 function Question(props) {
   var style = {
     color: "lightpink",
-    fontSize: "1.5em"
+    fontSize: "1.5em",
+    margin: "10%",
+    fontWeight: "lighter"
   }
   return(
     <h2 style={style}>{props.dataSet.question}</h2>
@@ -114,7 +117,7 @@ function Question(props) {
 function AnswerList(props) {
   var answers = []
   for (let i = 0; i < props.dataSet.answers.length; i++){
-    answers.push(<Answer choice={i} handleOnClick={props.handleOnClick}
+    answers.push(<Answer choice={i} handleClick={props.handleClick}
       answer={props.dataSet.answers[i]} />)
   }
   return(
@@ -155,7 +158,7 @@ function Quiz(props) {
   return(
     <div style={style}>
       <Question dataSet={props.dataSet} />
-      <AnswerList dataSet={props.dataSet} handleOnClick = {props.handleOnClick} />
+      <AnswerList dataSet={props.dataSet} handleClick = {props.handleClick} />
       </div>
   )
 }
