@@ -4,7 +4,7 @@ class App extends Component {
   constructor(props){
     super(props);
 
-    var dataSet = [
+    const dataSet = [
       {
       question: "How many #1 solo albums does Beyonce have?",
       answers: [
@@ -67,6 +67,7 @@ class App extends Component {
     } else {
       this.setState({blasphemy: this.state.blasphemy + 1})
     }
+
 // for when the quiz ends
     if (this.state.current == 5) {
       this.setState({current: 0})
@@ -91,9 +92,10 @@ class App extends Component {
 function Answer(props) {
   var style = {
     height: 40,
+    background: "grey",
     width: "100%",
-    color: "lightblue",
-    fontWeight: "bold"
+    color: "lightgreen",
+    fontSize: "1.25em"
   }
   return(
     <div>
@@ -118,7 +120,7 @@ function Question(props) {
 function AnswerList(props) {
   var answers = []
   for (let i = 0; i < props.dataSet.answers.length; i++){
-    answers.push(<Answer choice={i} handleClick={props.handleClick}
+    answers.push(<Answer input={i} handleClick={props.handleClick}
       answer={props.dataSet.answers[i]} />)
   }
   return(
@@ -160,7 +162,8 @@ function Quiz(props) {
     display: "block",
     width: "40%",
     textAlign: "center",
-    margin: "0 auto"
+    margin: "0 auto",
+    boxSizing: "border-box"
   }
   return(
     <div style={style}>
