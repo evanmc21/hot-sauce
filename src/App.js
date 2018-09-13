@@ -92,7 +92,8 @@ function Answer(props) {
   var style = {
     height: 40,
     width: "100%",
-    color: "lightblue"
+    color: "lightblue",
+    fontWeight: "bold"
   }
   return(
     <div>
@@ -132,7 +133,7 @@ function CorrectTotal(props) {
     display: "inline-block",
     background: "grey",
     color: "lightgreen",
-    margin: "5%",
+    margin: "2.5%",
     fontSize: "2em",
     fontWeight: "lighter"
   }
@@ -158,7 +159,8 @@ function Quiz(props) {
   var style = {
     display: "block",
     width: "40%",
-    textAlign: "center"
+    textAlign: "center",
+    margin: "0 auto"
   }
   return(
     <div style={style}>
@@ -172,7 +174,7 @@ function Results(props) {
   var style = {
     display: "block",
     width: "100%",
-    float: "left",
+    textAlign: "center",
     background: "grey"
   }
   return(
