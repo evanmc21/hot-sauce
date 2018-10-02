@@ -58,7 +58,7 @@ class App extends Component {
     ]
     this.state = {current: 0, dataSet:dataSet, correct: 0, blasphemy: 0}
     this.handleClick = this.handleClick.bind(this)
-  } //constuctor ends
+  } //vaructor ends
 
   handleClick = input => {
     if (input ==
@@ -118,8 +118,9 @@ function Question(props) {
 }
 
 function AnswerList(props) {
+  // need to fix this loop
   var answers = []
-  for (let i = 0; i < props.dataSet.answers.length; i++){
+  for (let i = 0; i <  props.dataSet.answers.length; i++){
     answers.push(<Answer input={i} handleClick={props.handleClick}
       answer={props.dataSet.answers[i]} />)
   }
