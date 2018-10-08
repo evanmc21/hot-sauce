@@ -5,7 +5,6 @@ Simple Mini Beyonce quiz using react
 
 ## Usage
 Clone the repo and run the following in your terminal:
--bundle install
 -yarn start
 Enjoy!
 

@@ -16,7 +16,7 @@ class App extends Component {
         answers: [
           "9", "21", "15", "7"
         ],
-        correct: 2
+        correct: 1
       }, {
         question: "What is Beyonce's favorite number?",
         answers: [
@@ -47,7 +47,7 @@ class App extends Component {
   } //vaructor ends
 
   handleClick = input => {
-    if (input == this.state.dataSet[this.state.current].correct) {
+    if (input === this.state.dataSet[this.state.current].correct) {
       this.setState({
         correct: this.state.correct + 1
       })
@@ -58,7 +58,7 @@ class App extends Component {
     }
 
     // for when the quiz ends
-    if (this.state.current == 5) {
+    if (this.state.current === 4) {
       this.setState({current: 0})
       this.setState({blasphemy: 0})
       this.setState({correct: 0})
@@ -78,7 +78,7 @@ class App extends Component {
 }
 // formatting the quiz and passing data through props
 function Answer(props) {
-  var style = {
+  const style = {
     height: 40,
     background: "grey",
     width: "100%",
