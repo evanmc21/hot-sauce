@@ -1,11 +1,8 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import beybraids from './images/beybraids.jpg';
-import bey2 from './images/bey2.jpg'
-import bey3 from './images/bey3.jpg'
-import bey4 from './images/bey4.jpg'
 import Lightbox from 'react-images';
 
-class Description extends Component {
+class Pictures extends Component {
   constructor(){
     super();
 
@@ -46,21 +43,46 @@ class Description extends Component {
     })
   }
 
+  renderGallery(){
+    const { images } = this.props;
+
+    if (!images) return;
+
+    const gallery = images.map((obj, i) =>{
+      return(
+        <img src={obj.src} alt="" onClick={(e) => this.openLightbox(i, e)}/>
+      );
+    });
+    return(
+      <div>
+        { gallery}
+      </div>
+    )
+  }
 
   render() {
     return (
+        <div>
+          {this.renderGallery()}
       <Lightbox
         currentImage={this.state.currentImage}
-        images={[{ src: beybraids}, { src: bey2 }, { src: bey3 }, { src: bey4 }]}
+        images={this.props.images}
         isOpen={this.state.lightboxIsOpen}
         onClickPrev={this.gotoPrevious}
         onClickNext={this.gotoNext}
         onClose={this.closeLightbox}
         />
+        </div>
     );
   }
 }
 
+Pictures.displayName = 'Picures';
+Pictures.propTypes = {
+  heading: PropTypes.string,
+  images: PropTypes.array,
+  // showThumbnails: PropTypes.bool
+}
 
 
-export default Description;
+export default Pictures;

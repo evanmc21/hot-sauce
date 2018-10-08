@@ -1,5 +1,10 @@
 import React, {Component} from 'react';
-import Description from './Description';
+import beybraids from './images/beybraids.jpg';
+import bey2 from './images/bey2.jpg';
+import bey3 from './images/bey3.jpg';
+import bey4 from './images/bey4.jpg';
+
+import Pictures from './Pictures';
 
 class App extends Component {
   constructor(props) {
@@ -65,7 +70,7 @@ class App extends Component {
       blasphemy: 0
     }
     this.handleClick = this.handleClick.bind(this)
-  } //vaructor ends
+  } //constructor ends
 
   handleClick = input => {
     if (input === this.state.dataSet[this.state.current].correct) {
@@ -91,10 +96,29 @@ class App extends Component {
   }
 
   render() {
+    const Bey_Pictures = [
+      {
+        src: beybraids
+      },
+      {
+        src: bey2
+      },
+      {
+        src: bey3
+      },
+      {
+        src: bey4
+      }
+    ]
     return (<div>
       <Results correct={this.state.correct} blasphemy={this.state.blasphemy}/>
       <Quiz handleClick={this.handleClick} dataSet={this.state.dataSet[this.state.current]}/>
-      <Description />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <Pictures images={Bey_Pictures} />
 
     </div>)
   };
