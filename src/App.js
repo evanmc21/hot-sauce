@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Description from './Description';
 
 class App extends Component {
   constructor(props) {
@@ -35,6 +36,26 @@ class App extends Component {
           "2011", "2012", "2008", "Who is Jay-Z?"
         ],
         correct: 2
+      },
+      {
+        question: "Which artist inspired Beyonce to start performing?",
+        answers: [
+          "Michael Jackson", "Tina Turner", "Whitney Houston", "Prince", "Dolly Parton"
+        ],
+        correct: 0
+      },
+      {
+        question: "Beyonce performed with whom at the 2016 Country Music Awards?",
+        answers: [
+          "Faith Hill & Tim McGraw", "The Dixie Chicks", "Carrie Underwood", "Jason Aldean"
+        ],
+        correct: 1
+      },
+      {
+        question: "What was Destiny's Child's first hit single?",
+        answers: ["Say My Name", "No, No, No", "Survivor", "Bills, Bills, Bills"
+        ],
+        correct: 1
       }
     ]
     this.state = {
@@ -58,7 +79,7 @@ class App extends Component {
     }
 
     // for when the quiz ends
-    if (this.state.current === 4) {
+    if (this.state.current === 7) {
       this.setState({current: 0})
       this.setState({blasphemy: 0})
       this.setState({correct: 0})
@@ -73,6 +94,8 @@ class App extends Component {
     return (<div>
       <Results correct={this.state.correct} blasphemy={this.state.blasphemy}/>
       <Quiz handleClick={this.handleClick} dataSet={this.state.dataSet[this.state.current]}/>
+      <Description />
+
     </div>)
   };
 }
