@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Lightbox from 'react-images';
 
 class Pictures extends Component {
-  constructor(){
+  constructor() {
     super();
 
     this.state = {
@@ -18,62 +18,44 @@ class Pictures extends Component {
 
   openLightbox(index, e) {
     e.preventDefault();
-    this.setState({
-      currentImage: index,
-      lightboxIsOpen: true,
-    });
+    this.setState({currentImage: index, lightboxIsOpen: true});
   }
 
   closeLightbox() {
+    this.setState({currentImage: 0, lightboxIsOpen: false});
+  }
+
+  gotoPrevious() {
     this.setState({
-      currentImage: 0,
-      lightboxIsOpen: false,
+      currentImage: this.state.currentImage - 1
     });
   }
 
-  gotoPrevious(){
+  gotoNext() {
     this.setState({
-      currentImage: this.state.currentImage - 1,
-    });
-  }
-
-  gotoNext(){
-    this.setState({
-      currentImage: this.state.currentImage + 1,
+      currentImage: this.state.currentImage + 1
     })
   }
 
-  renderGallery(){
-    const { images } = this.props;
+  renderGallery() {
+    const {images} = this.props;
 
-    if (!images) return;
-
-    const gallery = images.map((obj, i) =>{
-      return(
-        <img src={obj.src} alt="" onClick={(e) => this.openLightbox(i, e)}/>
-      );
+    if (!images) 
+      return;
+    
+    const gallery = images.map((obj, i) => {
+      return (<img src={obj.src} alt="" onClick={(e) => this.openLightbox(i, e)}/>);
     });
-    return(
-      <div>
-        { gallery}
-      </div>
-    )
+    return (<div>
+      {gallery}
+    </div>)
   }
 
   render() {
-    return (
-        <div>
-          {this.renderGallery()}
-      <Lightbox
-        currentImage={this.state.currentImage}
-        images={this.props.images}
-        isOpen={this.state.lightboxIsOpen}
-        onClickPrev={this.gotoPrevious}
-        onClickNext={this.gotoNext}
-        onClose={this.closeLightbox}
-        />
-        </div>
-    );
+    return (<div>
+      {this.renderGallery()}
+      <Lightbox currentImage={this.state.currentImage} images={this.props.images} isOpen={this.state.lightboxIsOpen} onClickPrev={this.gotoPrevious} onClickNext={this.gotoNext} onClose={this.closeLightbox}/>
+    </div>);
   }
 }
 
@@ -83,6 +65,5 @@ Pictures.propTypes = {
   images: PropTypes.array,
   // showThumbnails: PropTypes.bool
 }
-
 
 export default Pictures;
