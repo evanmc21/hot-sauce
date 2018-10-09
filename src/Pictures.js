@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import Lightbox from 'react-images';
+import './Pictures.css';
 
 class Pictures extends Component {
   constructor() {
@@ -40,13 +41,13 @@ class Pictures extends Component {
   renderGallery() {
     const {images} = this.props;
 
-    if (!images) 
+    if (!images)
       return;
-    
+
     const gallery = images.map((obj, i) => {
       return (<img src={obj.src} alt="" onClick={(e) => this.openLightbox(i, e)}/>);
     });
-    return (<div>
+    return (<div className="pics">
       {gallery}
     </div>)
   }
@@ -54,7 +55,13 @@ class Pictures extends Component {
   render() {
     return (<div>
       {this.renderGallery()}
-      <Lightbox currentImage={this.state.currentImage} images={this.props.images} isOpen={this.state.lightboxIsOpen} onClickPrev={this.gotoPrevious} onClickNext={this.gotoNext} onClose={this.closeLightbox}/>
+      <Lightbox
+      currentImage={this.state.currentImage}
+      images={this.props.images}
+      isOpen={this.state.lightboxIsOpen}
+      onClickPrev={this.gotoPrevious}
+      onClickNext={this.gotoNext}
+      onClose={this.closeLightbox}/>
     </div>);
   }
 }
