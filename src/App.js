@@ -121,10 +121,11 @@ class App extends Component {
 // formatting the quiz and passing data through props
 function Answer(props) {
   const style = {
-    height: 40,
-    background: "grey",
-    width: "100%",
-    color: "lightgreen",
+    height: "auto",
+    background: "lightgreen",
+    width: "33%",
+    borderColor: "white",
+    color: "white",
     fontSize: "1.25em"
   }
   return (<div>
@@ -137,7 +138,7 @@ function Question(props) {
   var style = {
     color: "lightpink",
     fontSize: "1.5em",
-    margin: "10%",
+    margin: "5%",
     fontWeight: "lighter"
   }
   return (<h2 style={style}>{props.dataSet.question}</h2>)
@@ -157,7 +158,6 @@ function AnswerList(props) {
 function CorrectTotal(props) {
   var style = {
     display: "inline-block",
-    background: "grey",
     color: "lightgreen",
     margin: "2.5%",
     fontSize: "2em",
@@ -170,7 +170,6 @@ function CorrectTotal(props) {
 function BlasphemyTotal(props) {
   var style = {
     display: "inline-block",
-    background: "grey",
     color: "lightgreen",
     fontSize: "2em",
     fontWeight: "lighter"
@@ -198,7 +197,7 @@ function Results(props) {
     display: "block",
     width: "100%",
     textAlign: "center",
-    background: "grey"
+    background: "white"
   }
   return (<div style={style}>
     <CorrectTotal correct={props.correct}/>
