@@ -104,8 +104,6 @@ class App extends Component {
         blasphemy: this.state.blasphemy + 1
       })
     }
-
-    // for when the quiz ends
     if (this.state.current === 11) {
       this.setState({current: 0})
       this.setState({blasphemy: 0})
@@ -142,7 +140,6 @@ class App extends Component {
     </div>)
   };
 }
-// formatting the quiz and passing data through props
 function Answer(props) {
   const style = {
     height: "auto",
@@ -169,7 +166,6 @@ function Question(props) {
 }
 
 function AnswerList(props) {
-  // need to fix this loop
   var answers = []
   for (let i = 0; i < props.dataSet.answers.length; i++) {
     answers.push(<Answer input={i} handleClick={props.handleClick} answer={props.dataSet.answers[i]}/>)
