@@ -71,15 +71,13 @@ class App extends Component {
           "Say My Name", "No, No, No", "Survivor", "Bills, Bills, Bills"
         ],
         correct: 1
-      },
-      {
+      },{
         question: "What Beyonce song was Missy Elliot featured on?",
         answers: [
           "Yes", "Speechless", "Signs", "Daddy Lessons"
         ],
         correct: 2
-      },
-      {
+      },{
         question: "What song was Frank Ocean credited on as a co-writer on the album, 4?",
         answers: [
           "I Miss You", "I Was Here", "Dance for You", "Rather Die Young"
