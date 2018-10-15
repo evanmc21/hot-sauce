@@ -42,6 +42,18 @@ class App extends Component {
         ],
         correct: 2
       }, {
+        question: "How many #1 singles does Beyonce have on the hot 100?",
+        answers: [
+          "8", "4", "7", "6", "10"
+        ],
+        correct: 3
+      }, {
+        question: "Who came up with the beat in Yonce?",
+        answers: [
+          "Timbaland", "Justin Timberlake", "Solange", "Andre 3000", "Sia"
+        ],
+        correct: 1
+      }, {
         question: "Which artist inspired Beyonce to start performing?",
         answers: [
           "Michael Jackson", "Tina Turner", "Whitney Houston", "Prince", "Dolly Parton"
@@ -59,6 +71,20 @@ class App extends Component {
           "Say My Name", "No, No, No", "Survivor", "Bills, Bills, Bills"
         ],
         correct: 1
+      },
+      {
+        question: "What Beyonce song was Missy Elliot featured on?",
+        answers: [
+          "Yes", "Speechless", "Signs", "Daddy Lessons"
+        ],
+        correct: 2
+      },
+      {
+        question: "What song was Frank Ocean credited on as a co-writer on the album, 4?",
+        answers: [
+          "I Miss You", "I Was Here", "Dance for You", "Rather Die Young"
+        ],
+        correct: 0
       }
     ]
     this.state = {
@@ -82,7 +108,7 @@ class App extends Component {
     }
 
     // for when the quiz ends
-    if (this.state.current === 7) {
+    if (this.state.current === 11) {
       this.setState({current: 0})
       this.setState({blasphemy: 0})
       this.setState({correct: 0})
