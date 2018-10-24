@@ -166,7 +166,7 @@ function Question(props) {
 }
 
 function AnswerList(props) {
-  var answers = []
+  let answers = []
   for (let i = 0; i < props.dataSet.answers.length; i++) {
     answers.push(<Answer input={i} handleClick={props.handleClick} answer={props.dataSet.answers[i]}/>)
   }
@@ -176,7 +176,7 @@ function AnswerList(props) {
 }
 
 function CorrectTotal(props) {
-  var style = {
+  const style = {
     display: "inline-block",
     color: "lightgreen",
     margin: "2.5%",
@@ -188,7 +188,7 @@ function CorrectTotal(props) {
 }
 
 function BlasphemyTotal(props) {
-  var style = {
+  const style = {
     display: "inline-block",
     color: "lightgreen",
     fontSize: "2em",
@@ -199,9 +199,9 @@ function BlasphemyTotal(props) {
 }
 
 function Quiz(props) {
-  var style = {
+  const style = {
     display: "block",
-    width: "40%",
+    width: "45%",
     textAlign: "center",
     margin: "0 auto",
     boxSizing: "border-box"
@@ -213,7 +213,7 @@ function Quiz(props) {
 }
 
 function Results(props) {
-  var style = {
+  const style = {
     display: "block",
     width: "100%",
     textAlign: "center",
