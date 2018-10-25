@@ -1,11 +1,10 @@
-import React, {Component} from 'react';
-import beybraids from './images/beybraids.jpg';
-import bey2 from './images/bey2.jpg';
-import bey3 from './images/bey3.jpg';
-import bey4 from './images/bey4.jpg';
-import Popup from './Popup';
+import React, { Component } from 'react';
+import beybraids from '../images/beybraids.jpg';
+import bey2 from '../images/bey2.jpg';
+import bey3 from '../images/bey3.jpg';
+import bey4 from '../images/bey4.jpg';
 import Pictures from './Pictures';
-import dataSet from '../dataSet/dataSet';
+import dataSet from '../data/dataSet';
 
 class App extends Component {
   constructor(props) {

@@ -1,7 +1,7 @@
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import React, {Component} from 'react';
 import Lightbox from 'react-images';
-import './Pictures.css';
+import '../styles/Pictures.css';
 
 class Pictures extends Component {
   constructor() {
